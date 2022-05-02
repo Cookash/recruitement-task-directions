@@ -1,14 +1,13 @@
-import {React, useContext, useState} from "react";
+import { React, useContext, useState} from "react";
 import { Link } from "react-router-dom";
+
 
 import History from "../components/History";
 import { DataContext } from "../components/DataContext";
 
 
 export default function Search() {
-    const {directionsData, changeDirectionsData} = useContext(DataContext);
-
-
+    const {changeDirectionsData} = useContext(DataContext);
     const [origin, setOrigin] = useState('')
     const [destination, setDestination] = useState('')
 
@@ -18,6 +17,7 @@ export default function Search() {
     const updateDirecionsData = (event) => {
         setDestination(event.target.value);
     };
+
     const logValue = () => {
         changeDirectionsData({origin, destination})
     }
@@ -28,7 +28,7 @@ return (
             <input onChange={updateDirecionsData} name="destination" value={destination} placeholder="Enter Destination" />
         </form>
         <Link to={"./map"}><button onClick={logValue}>Get Directions</button></Link>
-        <History start={directionsData.origin} finish={directionsData.destination} />
+            <History/>
     </div>
 );
 }
