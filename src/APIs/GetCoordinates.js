@@ -16,5 +16,4 @@ export default async function GetCoordinates(arr) {
     } catch(e) {
         console.log('Theere was an error with the API')
     }
-    /*return (response.data['features'][0].geometry.coordinates);*/
 }
