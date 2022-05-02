@@ -2,8 +2,7 @@ import axios from 'axios';
 
 
 export default async function GetCoordinates(arr) {
-    const crudentials = require("../config.json")
-    const token = crudentials.SearchToken
+    const token = process.env.REACT_APP_COORDINATES;
     const fixedName = arr.replace(/\s/g, '+')
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${fixedName}.json?access_token=${token}`
     let coordinates
