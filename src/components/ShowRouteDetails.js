@@ -13,25 +13,22 @@ export default class ShowRouteDetails extends Component {
     };
   }
   componentDidMount() {
-    GetRouteDetails(this.props.start, this.props.finish).then(
-      (response) => {
-        this.setState({ adress: response["adress"] });
-        this.setState({ destination: response["destination"] });
-        this.setState({ distance: response["distance"] });
-        this.setState({ duration: response["duration"] });
-      }
-    );
+    GetRouteDetails(this.props.start, this.props.finish).then((response) => {
+      this.setState({ adress: response["adress"] });
+      this.setState({ destination: response["destination"] });
+      this.setState({ distance: response["distance"] });
+      this.setState({ duration: response["duration"] });
+    });
   }
-
   render() {
     return (
       <>
         <h1>Details</h1>
         <p>Origin Adress: {this.state.adress}</p>
         <p>Destination Adress: {this.state.destination} km</p>
-        <p>Distance: {(this.state.distance/1000).toFixed(1)}</p>
+        <p>Distance: {(this.state.distance / 1000).toFixed(1)}</p>
         <p>Duration: {this.state.duration}</p>
-        <RouteCalculation distance={this.state.distance}/>
+        <RouteCalculation distance={this.state.distance} />
       </>
     );
   }

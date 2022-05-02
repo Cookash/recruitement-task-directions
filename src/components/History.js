@@ -5,11 +5,8 @@ import { HistoryContext } from "./HistoryContext";
 export default function History() {
   const [historyData, addToHistory] = useContext(HistoryContext);
   const { directionsData } = useContext(DataContext);
-  
   useEffect(() => {// eslint-disable-next-line
     addToHistory([...historyData,[directionsData.origin, directionsData.destination],]);}, [directionsData]);
-    
-
       return (historyData.map(id => {
         if(id[0] !== undefined && id[0] !== '' && id[1] !== '' && id[1] !== '')
             return <>

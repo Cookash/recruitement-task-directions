@@ -1,6 +1,5 @@
 import { React } from "react";
 
-
 export default function GetMapEmbed(props) {
   let start = props.origin;
   let finish = props.destination;
