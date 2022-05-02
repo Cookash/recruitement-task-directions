@@ -21,6 +21,8 @@ export default function Search() {
     const logValue = () => {
         changeDirectionsData({origin, destination})
     }
+
+    
 return (
     <div>
         <form>
@@ -28,6 +30,7 @@ return (
             <input onChange={updateDirecionsData} name="destination" value={destination} placeholder="Enter Destination" />
         </form>
         <Link to={"./map"}><button onClick={logValue}>Get Directions</button></Link>
+        <h2>History:</h2>
             <History/>
     </div>
 );
