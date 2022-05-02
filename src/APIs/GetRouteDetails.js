@@ -4,7 +4,11 @@ export default async function GetRouteDetails(arr1, arr2) {
   let start = await GetCoordinates(arr1);
   let finish = await GetCoordinates(arr2);
   const google = window.google;
-  var service = new google.maps.DistanceMatrixService();
+  if (start === 'error' || finish === 'error') {
+    console.log('There was an error with API, please try again')
+    return 'error'
+  } try {
+    var service = new google.maps.DistanceMatrixService();
   let data = await service.getDistanceMatrix({
     origins: [
       {
@@ -32,4 +36,8 @@ export default async function GetRouteDetails(arr1, arr2) {
     'duration':data.rows[0].elements[0].duration["text"],
   };
   return detailsList;
+  } catch (e) {
+    console.log('There was an error with API, please try again')
+    return 'error'
+  }
 }
