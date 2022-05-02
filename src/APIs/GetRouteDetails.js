@@ -29,7 +29,7 @@ export default async function GetRouteDetails(arr1, arr2) {
     const detailsList = {
       adress: data.originAddresses[1],
       destination: data.destinationAddresses[0],
-      distance: data.rows[0].elements[0].distance["value"],
+      distance: data.rows[0].elements[1].distance["value"],
       duration: data.rows[0].elements[0].duration["text"],
     };
     return detailsList;
