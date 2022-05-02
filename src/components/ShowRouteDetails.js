@@ -28,7 +28,7 @@ export default class ShowRouteDetails extends Component {
       <>
         <h1>Details</h1>
         <p>Origin Adress: {this.state.adress}</p>
-        <p>Destination Adress: {this.state.destination}</p>
+        <p>Destination Adress: {this.state.destination} km</p>
         <p>Distance: {(this.state.distance/1000).toFixed(1)}</p>
         <p>Duration: {this.state.duration}</p>
         <RouteCalculation distance={this.state.distance}/>
