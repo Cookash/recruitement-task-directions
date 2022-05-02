@@ -31,7 +31,7 @@ export default function RouteCalculation(props) {
         value={rate}
         onChange={updateOriginData}
       ></input>
-      <div>Price: {price} (Distance*Rate*110%)</div>
+      <div>Price: {Math.round(price)} (Distance*Rate*110%)</div>
 
     </div>
   );
