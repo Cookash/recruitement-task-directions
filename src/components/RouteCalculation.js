@@ -20,7 +20,7 @@ export default function RouteCalculation(props) {
   const price = distance * priceMultiplier * rate + neededDays() * pricePerDay;
   /*Przy zalozeniu, ze 110% jest liczone bez placenia za liczbe dni*/
   return (
-    <div>
+    <>
       <label htmlFor="rate">Change your price per KM:</label>
       <input
         type="number"
@@ -29,6 +29,6 @@ export default function RouteCalculation(props) {
         onChange={updateOriginData}
       ></input>
       <div>Price: {Math.round(price)} (Distance*Rate*110%)</div>
-    </div>
+    </>
   );
 }

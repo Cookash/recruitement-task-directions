@@ -21,7 +21,7 @@ export default function Search() {
   };
 
   return (
-    <div>
+    <>
       <form>
         <input
           onChange={updateOriginData}
@@ -41,6 +41,6 @@ export default function Search() {
       </Link>
       <h2>History:</h2>
       <History />
-    </div>
+    </>
   );
 }

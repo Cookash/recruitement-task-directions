@@ -15,13 +15,13 @@ export default function Map() {
     return (
       <>
         <p>There is no data to show</p>
+        <hr></hr>
         <GoBackButton where="/" description="Go Back" />
       </>
     );
   } else {
     return (
       <>
-        <GoBackButton where="/" description="Go Back" />
         <GetMapEmbed
           origin={directionsData.origin}
           destination={directionsData.destination}
@@ -30,6 +30,8 @@ export default function Map() {
           start={directionsData.origin}
           finish={directionsData.destination}
         />
+        <hr></hr>
+        <GoBackButton where="/" description="Go Back" />
       </>
     );
   }
