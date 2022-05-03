@@ -27,7 +27,7 @@ export default async function GetRouteDetails(arr1, arr2) {
       avoidTolls: false,
     });
     const detailsList = {
-      adress: data.originAddresses[1],
+      adress: data.originAddresses[0],
       destination: data.destinationAddresses[0],
       distance: data.rows[0].elements[0].distance["value"],
       duration: data.rows[0].elements[0].duration["text"],
